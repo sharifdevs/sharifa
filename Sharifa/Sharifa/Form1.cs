@@ -16,5 +16,10 @@ namespace Sharifa
         {
             InitializeComponent();
         }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
