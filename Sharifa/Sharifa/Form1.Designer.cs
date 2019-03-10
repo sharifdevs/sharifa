@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -39,18 +40,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageLive = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxStream = new System.Windows.Forms.TextBox();
             this.comboBoxStream = new System.Windows.Forms.ComboBox();
             this.tabPageCmds = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listBoxReceive = new System.Windows.Forms.ListBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.textBoxReply = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.tabPageStatus = new System.Windows.Forms.TabPage();
+            this.richTextBoxStream = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxReply = new System.Windows.Forms.RichTextBox();
+            this.buttonSend = new System.Windows.Forms.Button();
+            this.timerSync = new System.Windows.Forms.Timer(this.components);
             this.tabControlMain.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -194,7 +198,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBoxStream);
+            this.panel2.Controls.Add(this.buttonSend);
+            this.panel2.Controls.Add(this.richTextBoxReply);
+            this.panel2.Controls.Add(this.richTextBoxStream);
             this.panel2.Controls.Add(this.comboBoxStream);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -202,16 +208,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(3);
             this.panel2.Size = new System.Drawing.Size(786, 418);
             this.panel2.TabIndex = 0;
-            // 
-            // textBoxStream
-            // 
-            this.textBoxStream.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxStream.Location = new System.Drawing.Point(3, 24);
-            this.textBoxStream.Name = "textBoxStream";
-            this.textBoxStream.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBoxStream.Size = new System.Drawing.Size(780, 22);
-            this.textBoxStream.TabIndex = 1;
-            this.textBoxStream.Text = "دستورات وارده و بازخورد ها";
             // 
             // comboBoxStream
             // 
@@ -281,7 +277,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.textBoxReply);
+            this.splitContainer2.Panel1.Controls.Add(this.richTextBox1);
             this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // splitContainer2.Panel2
@@ -291,17 +287,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(516, 412);
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.TabIndex = 0;
-            // 
-            // textBoxReply
-            // 
-            this.textBoxReply.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxReply.Location = new System.Drawing.Point(0, 0);
-            this.textBoxReply.Name = "textBoxReply";
-            this.textBoxReply.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBoxReply.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBoxReply.Size = new System.Drawing.Size(516, 22);
-            this.textBoxReply.TabIndex = 0;
-            this.textBoxReply.Text = "این یک متن نمونه است";
             // 
             // flowLayoutPanel1
             // 
@@ -342,6 +327,51 @@
             this.tabPageStatus.Text = "وضعیت";
             this.tabPageStatus.UseVisualStyleBackColor = true;
             // 
+            // richTextBoxStream
+            // 
+            this.richTextBoxStream.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxStream.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBoxStream.Location = new System.Drawing.Point(3, 24);
+            this.richTextBoxStream.Name = "richTextBoxStream";
+            this.richTextBoxStream.ReadOnly = true;
+            this.richTextBoxStream.Size = new System.Drawing.Size(780, 349);
+            this.richTextBoxStream.TabIndex = 1;
+            this.richTextBoxStream.Text = "تراکنش ها\n";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(516, 350);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBoxReply
+            // 
+            this.richTextBoxReply.BackColor = System.Drawing.Color.Bisque;
+            this.richTextBoxReply.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxReply.Location = new System.Drawing.Point(115, 379);
+            this.richTextBoxReply.Name = "richTextBoxReply";
+            this.richTextBoxReply.Size = new System.Drawing.Size(668, 36);
+            this.richTextBoxReply.TabIndex = 2;
+            this.richTextBoxReply.Text = "پاسخ آنی";
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(6, 379);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(103, 33);
+            this.buttonSend.TabIndex = 3;
+            this.buttonSend.Text = "ارسال";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // timerSync
+            // 
+            this.timerSync.Interval = 1000;
+            this.timerSync.Tick += new System.EventHandler(this.timerSync_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,7 +397,6 @@
             this.panel3.PerformLayout();
             this.tabPageLive.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.tabPageCmds.ResumeLayout(false);
             this.tabPageCmds.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -376,7 +405,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -398,8 +426,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox listBoxReceive;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.TextBox textBoxReply;
-        private System.Windows.Forms.TextBox textBoxStream;
         private System.Windows.Forms.ComboBox comboBoxStream;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
@@ -411,6 +437,11 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RichTextBox richTextBoxStream;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.RichTextBox richTextBoxReply;
+        private System.Windows.Forms.Timer timerSync;
     }
 }
 

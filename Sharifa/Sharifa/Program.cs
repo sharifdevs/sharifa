@@ -7,11 +7,12 @@ using Telegram.Bot;
 
 namespace Sharifa
 {
-    
     static class Program
     {
         public static Form1 frm;
         public static readonly TelegramBotClient thisBot = new TelegramBotClient("775773227:AAGuNFAD-od3jMD09-H_BOYdno5K87Ei7Ww");
+        public static Telegram.Bot.Args.MessageEventArgs user;
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -26,12 +27,12 @@ namespace Sharifa
             Application.Run(frm);
         }
 
-        public async static void ThisBot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
+        public static void ThisBot_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
+            if(e != null) user = e;
             if(e.Message.Type == Telegram.Bot.Types.Enums.MessageType.Text)
             {
-                frm.TextBoxStream_Update(e.Message.Text);
-                await thisBot.SendTextMessageAsync(e.Message.Chat.Id, "ok");
+                frm.RichTextBoxStream_Update(e);
             }
         }
     }
