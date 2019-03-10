@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telegram.Bot;
 
 namespace Sharifa
 {
@@ -15,11 +16,17 @@ namespace Sharifa
         public Form1()
         {
             InitializeComponent();
+            //Program.thisBot.StopReceiving();
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        public void TextBoxStream_Update(string msg)
+        {
+            textBoxStream.Text = msg;
         }
     }
 }
