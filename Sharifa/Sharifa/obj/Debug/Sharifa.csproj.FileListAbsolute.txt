@@ -6,10 +6,10 @@ C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\bin\Debug\Telegram.Bot.
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\bin\Debug\Telegram.Bot.xml
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.csprojAssemblyReference.cache
-C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.Form1.resources
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.Properties.Resources.resources
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.csproj.GenerateResource.cache
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.csproj.CoreCompileInputs.cache
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.csproj.CopyComplete
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.exe
 C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.pdb
+C:\Users\Hayyan\Documents\GitHub\sharifa\Sharifa\Sharifa\obj\Debug\Sharifa.FormMain.resources

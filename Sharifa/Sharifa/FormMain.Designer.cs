@@ -1,6 +1,6 @@
 ﻿namespace Sharifa
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -369,7 +369,7 @@
             // 
             // timerSync
             // 
-            this.timerSync.Interval = 1000;
+            this.timerSync.Interval = 250;
             this.timerSync.Tick += new System.EventHandler(this.timerSync_Tick);
             // 
             // Form1
