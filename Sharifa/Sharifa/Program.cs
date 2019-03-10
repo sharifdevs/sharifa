@@ -7,12 +7,10 @@ using Telegram.Bot;
 
 namespace Sharifa
 {
+    
     static class Program
     {
-        public static TelegramBotClient thisBot = new TelegramBotClient("775773227");
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public static TelegramBotClient thisBot = new TelegramBotClient("775773227:AAGuNFAD-od3jMD09-H_BOYdno5K87Ei7Ww");
         [STAThread]
         static void Main()
         {

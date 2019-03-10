@@ -48,9 +48,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControlMain.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.tabPageLive.SuspendLayout();
@@ -314,17 +314,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "نمودار فعالیت";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.buttonDelete);
-            this.flowLayoutPanel1.Controls.Add(this.buttonSave);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(516, 58);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(3, 3);
@@ -342,6 +331,17 @@
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "اعمال تغییرات";
             this.buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.buttonDelete);
+            this.flowLayoutPanel1.Controls.Add(this.buttonSave);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(516, 58);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -368,6 +368,7 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -408,9 +409,9 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
