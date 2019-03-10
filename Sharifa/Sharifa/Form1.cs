@@ -26,7 +26,7 @@ namespace Sharifa
 
         public void TextBoxStream_Update(string msg)
         {
-            textBoxStream.Text = msg;
+            textBoxStream.Text += msg + "\n";
         }
     }
 }
