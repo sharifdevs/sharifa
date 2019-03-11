@@ -40,20 +40,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageLive = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonSend = new System.Windows.Forms.Button();
+            this.richTextBoxReply = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxStream = new System.Windows.Forms.RichTextBox();
             this.comboBoxStream = new System.Windows.Forms.ComboBox();
             this.tabPageCmds = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listBoxReceive = new System.Windows.Forms.ListBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.tabPageStatus = new System.Windows.Forms.TabPage();
-            this.richTextBoxStream = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBoxReply = new System.Windows.Forms.RichTextBox();
-            this.buttonSend = new System.Windows.Forms.Button();
             this.timerSync = new System.Windows.Forms.Timer(this.components);
             this.tabControlMain.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -193,7 +193,7 @@
             this.tabPageLive.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageLive.Size = new System.Drawing.Size(792, 424);
             this.tabPageLive.TabIndex = 1;
-            this.tabPageLive.Text = "مشاهده زنده";
+            this.tabPageLive.Text = "زنده";
             this.tabPageLive.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -208,6 +208,37 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(3);
             this.panel2.Size = new System.Drawing.Size(786, 418);
             this.panel2.TabIndex = 0;
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(6, 379);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(103, 33);
+            this.buttonSend.TabIndex = 3;
+            this.buttonSend.Text = "ارسال";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // richTextBoxReply
+            // 
+            this.richTextBoxReply.BackColor = System.Drawing.Color.Bisque;
+            this.richTextBoxReply.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxReply.Location = new System.Drawing.Point(115, 379);
+            this.richTextBoxReply.Name = "richTextBoxReply";
+            this.richTextBoxReply.Size = new System.Drawing.Size(668, 36);
+            this.richTextBoxReply.TabIndex = 2;
+            this.richTextBoxReply.Text = "پاسخ آنی";
+            // 
+            // richTextBoxStream
+            // 
+            this.richTextBoxStream.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxStream.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBoxStream.Location = new System.Drawing.Point(3, 24);
+            this.richTextBoxStream.Name = "richTextBoxStream";
+            this.richTextBoxStream.ReadOnly = true;
+            this.richTextBoxStream.Size = new System.Drawing.Size(780, 349);
+            this.richTextBoxStream.TabIndex = 1;
+            this.richTextBoxStream.Text = "تراکنش ها\n";
             // 
             // comboBoxStream
             // 
@@ -226,7 +257,7 @@
             this.tabPageCmds.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageCmds.Size = new System.Drawing.Size(792, 424);
             this.tabPageCmds.TabIndex = 2;
-            this.tabPageCmds.Text = "دستورات";
+            this.tabPageCmds.Text = "مدیریت دستورات";
             this.tabPageCmds.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -288,15 +319,24 @@
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.TabIndex = 0;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(516, 350);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.buttonDelete);
             this.flowLayoutPanel1.Controls.Add(this.buttonSave);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 28);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(516, 58);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(516, 30);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // buttonDelete
@@ -327,59 +367,19 @@
             this.tabPageStatus.Text = "وضعیت";
             this.tabPageStatus.UseVisualStyleBackColor = true;
             // 
-            // richTextBoxStream
-            // 
-            this.richTextBoxStream.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxStream.Dock = System.Windows.Forms.DockStyle.Top;
-            this.richTextBoxStream.Location = new System.Drawing.Point(3, 24);
-            this.richTextBoxStream.Name = "richTextBoxStream";
-            this.richTextBoxStream.ReadOnly = true;
-            this.richTextBoxStream.Size = new System.Drawing.Size(780, 349);
-            this.richTextBoxStream.TabIndex = 1;
-            this.richTextBoxStream.Text = "تراکنش ها\n";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(516, 350);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBoxReply
-            // 
-            this.richTextBoxReply.BackColor = System.Drawing.Color.Bisque;
-            this.richTextBoxReply.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxReply.Location = new System.Drawing.Point(115, 379);
-            this.richTextBoxReply.Name = "richTextBoxReply";
-            this.richTextBoxReply.Size = new System.Drawing.Size(668, 36);
-            this.richTextBoxReply.TabIndex = 2;
-            this.richTextBoxReply.Text = "پاسخ آنی";
-            // 
-            // buttonSend
-            // 
-            this.buttonSend.Location = new System.Drawing.Point(6, 379);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(103, 33);
-            this.buttonSend.TabIndex = 3;
-            this.buttonSend.Text = "ارسال";
-            this.buttonSend.UseVisualStyleBackColor = true;
-            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
-            // 
             // timerSync
             // 
             this.timerSync.Interval = 250;
             this.timerSync.Tick += new System.EventHandler(this.timerSync_Tick);
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "سامانه مدیریت ربات تلگرام شریفا";

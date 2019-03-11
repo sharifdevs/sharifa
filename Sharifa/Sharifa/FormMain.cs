@@ -22,8 +22,9 @@ namespace Sharifa
             // wait for sql server to be loaded
 
             // get users data from sql server (intialization after system restart)
+
             //while (program.user == null) ; // XD
-            //for(int i=0; i<1; i++) // i < number of users on sql server + change user to user-id from server
+            //for(int i=0; i<usersIndex; i++) // i < number of users on sql server + change user to user-id from server
             //{
             //    comboboxstream.items.add(program.user.message.contact.firstname + program.user.message.contact.lastname + " : " + program.user.message.contact.phonenumber + " : " + program.user.message.contact.userid);
             //    comboboxstream.items[i] = program.user.message.chat.id;
